@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Fitness Avatar Project</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #0f0f0f;
+    color: white;
+    overflow-x: hidden;
+}
+
+header {
+    text-align: center;
+    padding: 80px 20px;
+    background: linear-gradient(90deg, #ff003c, #0066ff);
+    animation: fadeIn 2s ease-in;
+}
+
+header h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+header p {
+    opacity: 0.9;
+}
+
+.section {
+    padding: 80px 20px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 1s ease;
+}
+
+.section.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+img {
+    width: 300px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(255,0,60,0.6);
+    transition: transform 0.3s ease;
+}
+
+img:hover {
+    transform: scale(1.05);
+}
+
+video {
+    width: 70%;
+    margin-top: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 40px rgba(0,102,255,0.6);
+}
+
+audio {
+    margin-top: 20px;
+}
+
+button {
+    padding: 12px 24px;
+    margin-top: 20px;
+    border: none;
+    background: linear-gradient(90deg, #ff003c, #0066ff);
+    color: white;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+button:hover {
+    transform: scale(1.1);
+}
+
+input {
+    padding: 12px;
+    width: 300px;
+    border-radius: 8px;
+    border: none;
+    margin-top: 20px;
+}
+
+#response {
+    margin-top: 20px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    opacity: 0.9;
+}
+
+footer {
+    text-align: center;
+    padding: 40px;
+    opacity: 0.5;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <h1>AI Fitness Avatar</h1>
+    <p>Interactive AI Creation Workflow</p>
+</header>
+
+<section class="section">
+    <h2>1. Avatar Image (LLM Generated)</h2>
+    <img src="avatar.png" alt="AI Avatar">
+</section>
+
+<section class="section">
+    <h2>2. AI Voice (ElevenLabs)</h2>
+    <audio controls>
+        <source src="voice.m4a" type="audio/mp4">
+    </audio>
+</section>
+
+<section class="section">
+    <h2>3. Talking Avatar (HeyGen)</h2>
+    <video controls>
+        <source src="avatar-video.mp4" type="video/mp4">
+    </video>
+</section>
+
+<section class="section">
+    <h2>About This Project</h2>
+    <p>
+        This project demonstrates how multiple AI tools can work together.
+        The avatar image was generated using a large language model.
+        The voice was created with ElevenLabs.
+        The talking video was produced using HeyGen.
+        The website prototype was built using HTML, CSS, and JavaScript.
+    </p>
+</section>
+
+<section class="section">
+    <h2>Ask About AI & Fitness</h2>
+    <input type="text" id="question" placeholder="Ask about AI and fitness">
+    <br>
+    <button onclick="askAI()">Ask</button>
+    <div id="response"></div>
+</section>
+
+<footer>
+    DIUA2F Project – AI Avatar Creation Workflow
+</footer>
+
+<script>
+const sections = document.querySelectorAll('.section');
+
+window.addEventListener('scroll', () => {
+    sections.forEach(section => {
+        const position = section.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+        if(position < screenPosition){
+            section.classList.add('visible');
+        }
+    });
+});
+
+function askAI() {
+    const question = document.getElementById("question").value.toLowerCase();
+    const response = document.getElementById("response");
+
+    if(question.includes("fitness") || question.includes("ai")) {
+        response.innerText = "AI improves fitness through data-driven personalization, adaptive training programs, and recovery analysis.";
+    } else {
+        response.innerText = "Please ask a question related to AI and fitness.";
+    }
+}
+</script>
+
+</body>
+</html>

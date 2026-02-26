@@ -1,44 +1,4 @@
-/* Workflow Section Fix */
-ol {
-  list-style: none;
-  padding: 0;
-  margin: 20px auto;
-  max-width: 600px;
-  text-align: center;
-}
 
-ol li {
-  margin: 12px 0;
-  padding: 12px 18px;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  font-weight: 500;
-  transition: transform 0.3s ease;
-}
-
-ol li:hover {
-  transform: scale(1.03);
-}
-/* Clean Workflow Layout */
-.workflow-list {
-  max-width: 650px;
-  margin: 30px auto;
-  text-align: center;
-}
-
-.workflow-item {
-  margin: 14px 0;
-  padding: 16px 22px;
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 12px;
-  font-weight: 500;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(6px);
-}
-
-.workflow-item:hover {
-  transform: scale(1.05);
-  background: rgba(255, 255, 255, 0.15);
 }
 /* Premium Workflow Section */
 .workflow-list {
@@ -94,3 +54,4 @@ h2 {
     transform: translateY(0);
   }
 }
+

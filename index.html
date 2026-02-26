@@ -211,16 +211,28 @@ window.addEventListener('scroll', () => {
     });
 });
 
-function askAI() {
-    const question = document.getElementById("question").value.toLowerCase();
-    const response = document.getElementById("response");
+async function askAI() {
+    const question = document.getElementById("question").value;
+    const responseBox = document.getElementById("response");
 
-    if(question.includes("fitness") || question.includes("ai")) {
-        response.innerText = "AI improves fitness through data-driven personalization, adaptive training programs, and recovery analysis.";
-    } else {
-        response.innerText = "Please ask a question related to AI and fitness.";
+    responseBox.innerText = "Thinking...";
+
+    try {
+        const res = await fetch("/api/ask", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ question })
+        });
+
+        const data = await res.json();
+        responseBox.innerText = data.answer;
+
+    } catch (error) {
+        responseBox.innerText = "Error connecting to AI service.";
     }
-}
+}    
 </script>
 
 </body>

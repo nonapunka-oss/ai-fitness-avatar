@@ -40,3 +40,57 @@ ol li:hover {
   transform: scale(1.05);
   background: rgba(255, 255, 255, 0.15);
 }
+/* Premium Workflow Section */
+.workflow-list {
+  max-width: 700px;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.workflow-item {
+  margin: 16px 0;
+  padding: 18px 26px;
+  background: linear-gradient(135deg, rgba(255,0,100,0.08), rgba(0,150,255,0.08));
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 14px;
+  font-weight: 500;
+  font-size: 1.05rem;
+  transition: all 0.35s ease;
+  backdrop-filter: blur(8px);
+}
+
+.workflow-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 20px rgba(0,150,255,0.4);
+  background: linear-gradient(135deg, rgba(255,0,100,0.18), rgba(0,150,255,0.18));
+}
+
+/* Section Title Styling */
+h2 {
+  margin-top: 60px;
+  font-size: 2rem;
+  letter-spacing: 1px;
+}
+
+/* Fade In Animation */
+.workflow-item {
+  opacity: 0;
+  animation: fadeUp 0.8s ease forwards;
+}
+
+.workflow-item:nth-child(1) { animation-delay: 0.1s; }
+.workflow-item:nth-child(2) { animation-delay: 0.2s; }
+.workflow-item:nth-child(3) { animation-delay: 0.3s; }
+.workflow-item:nth-child(4) { animation-delay: 0.4s; }
+.workflow-item:nth-child(5) { animation-delay: 0.5s; }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

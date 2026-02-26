@@ -24,7 +24,7 @@
   transform: translateY(-8px) scale(1.03);
   box-shadow: 0 0 35px rgba(0,150,255,0.7);
   background: linear-gradient(135deg, rgba(255,0,100,0.35), rgba(0,150,255,0.35));
-}}
+}
 
 /* Section Title Styling */
 h2 {
@@ -55,5 +55,6 @@ h2 {
     transform: translateY(0);
   }
 }
+
 
 
